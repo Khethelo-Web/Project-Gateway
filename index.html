@@ -10,7 +10,9 @@
     <div class="password-container">
         <p class="brandName">Project Gateway</p>
         <input id="password" class="password" type="text" placeholder="Enter Password">
-        <button class="btnSubmit">Submit</button>
+        <a class="changePage">
+            <button class="btnSubmit">Submit</button>
+        </a>
     </div>
     
 
@@ -32,6 +34,7 @@
           appId: "1:151983325168:web:a4e5a1fe6a3a041e796735"
         };
 
+        const changePage = document.querySelector('.changePage');
         const passwordValue = document.getElementById('password');
         const btnSubmit = document.querySelector('.btnSubmit');
       
@@ -54,10 +57,10 @@
                         if (passwordValue.value == data[password]){
                             if (password == "Admin"){
                                 console.log(password)
-                                window.location.href="/admin.html";
+                                changePage.href="admin.html";
                             }else if (password == "Clients"){
                                 console.log(password)
-                                window.location.href="/client.html";
+                                changePage.href="client.html";
                             }
                         }
                         
