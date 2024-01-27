@@ -22,7 +22,6 @@
 
         
         <div class="survey-container">
-            <input type="text" name="searchBar" class="searchBar" id="searchBar" placeholder="Search for a character">
             <div class="sub-heading">
                 <div class="surveyTotal-container">
                     <p class="surveyTotal"></p>
@@ -118,7 +117,6 @@
         const fillIn = document.querySelector('.fill_In_Survey');
         const fillIn_container = document.querySelector('.fillIn_container');
         const container = document.querySelector('.container');
-        const searchBar = document.getElementById('searchBar');
         const btnClose = document.querySelector('.btnClose');
         const btnClosePassword = document.querySelector('.btnClosePassword');
         var btnCreate = document.querySelector('.btnCreate');
@@ -346,32 +344,6 @@
                 viewSurvey.appendChild(surveyElement);
 
                 myArray.push(viewSurvey);
-                
-                
-                searchBar.addEventListener('keyup', (e) => {
-                    const searchTarget = e.target.value;
-                    const filtered = storage.filter((character) => {
-                        return (
-                            character.Title.includes(searchTarget)
-                        );
-                    });
-                    displayCharacter(filtered);
-                });
-
-                
-
-                const displayCharacter = (characters) => {
-                    const htmlString = characters.map((character) => {
-                        return `
-                            <div class="survey_content">
-                                <p class="title">${character.Title}</p>
-                                <button class="btnAdd">Add</button>
-                                <button class="btnStatus">Status</button>
-                            </div>
-                            `
-                        }).join('');
-                    viewSurvey.innerHTML = htmlString;
-                }
 
                 
 
