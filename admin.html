@@ -212,7 +212,7 @@
                 Passwords
             })
             .then(() =>{
-                alert("Data stored successfully");
+                alert("Passwords successfully created");
             })
             .catch((error)=>{
                 alert("Unsuccessful, error "+ error);
@@ -288,7 +288,7 @@
                 btnDelete.addEventListener('click', () => {
                     remove(ref(db, "TheSurvey/" + data.Title))
                     .then(() =>{
-                        alert("Data successfully deleted");
+                        alert("Survey successfully deleted");
                     })
                     .catch((error)=>{
                         alert("Unsuccessful, error "+ error);
@@ -349,7 +349,7 @@
                             Questions
                           })
                           .then(() =>{
-                            alert("Message successfully delivered")
+                            alert("Survey data successfully captured")
                           })
                           .catch((error) =>{
                             alert("Unsuccessful")
