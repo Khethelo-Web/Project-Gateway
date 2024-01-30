@@ -286,16 +286,16 @@
                 btnDelete.classList.add('btnDelete');
                 btnDelete.innerHTML = "Delete";
                 btnDelete.addEventListener('click', () => {
-                    remove(ref(db, "TheSurvey/" + data.Title))
-                    .then(() =>{
-                        alert("Survey successfully deleted");
-                    })
-                    .catch((error)=>{
-                        alert("Unsuccessful, error "+ error);
-                    });
-
-                    window.location.reload();
-                    e.preventDefault();
+                    if (confirm("Are you sure you want to delete this survey?") == true) {
+                        remove(ref(db, "TheSurvey/" + data.Title))
+                        .then(() =>{
+                            alert("Data successfully deleted");
+                        })
+                        .catch((error)=>{
+                            alert("Unsuccessful, error "+ error);
+                        });
+                        window.location.reload();
+                    }
                 });
                 const btnAdd = document.createElement("button");
                 btnAdd.classList.add('btnAdd');
